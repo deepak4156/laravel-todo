@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App demo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <h1>Task List</h1>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+    <h1>Tasks</h1>
+    {{-- <ul>
+        @foreach($tasks as $task)
+            <li>{{ $task->description }}</li>
+        @endforeach
+    </ul>
+    <a href="{{ route('tasks.create') }}" class="btn btn-primary">New Task</a> --}}
+
+@endsection
