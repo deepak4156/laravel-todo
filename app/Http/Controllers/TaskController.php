@@ -29,4 +29,15 @@ class TaskController extends Controller
         return redirect('/tasks/create');
 
     }
+
+    public function update($id)
+    {
+        $task = Task::find($id);
+        $task->completed_at = now();
+        if($task->save()){
+            return redirect('/tasks');
+        }
+
+
+    }
 }
