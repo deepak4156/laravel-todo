@@ -17,6 +17,7 @@ class TaskController extends Controller
     }
 
     public function store(){
-        
+        $data = request()->all();
+        return dd($data);
     }
 }
