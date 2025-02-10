@@ -10,7 +10,7 @@ class TaskController extends Controller
     public function index()
     {
         $task = new Task();
-        $tasks = $task->all();
+        $tasks = $task->orderBy('id', 'desc')->get();
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
