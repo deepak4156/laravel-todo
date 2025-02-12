@@ -46,7 +46,10 @@ class TaskController extends Controller
     }
 
     public function delete($id){
-        $task = Task::find($id);
-        
+        $task = Task::where('id', $id)->first();
+        if ($task->delete()) {
+        return redirect('/tasks');
+        }
+        return redirect('/tasks')->with('status', 'deletetion_failed');
     }
 }
