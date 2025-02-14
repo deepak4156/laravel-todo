@@ -25,12 +25,13 @@ class TaskController extends Controller
 
     public function store()
     {
-        $task = new Task();
-        $task->description = request('description');
-        if ($task->save()) {
-            return redirect('/tasks');
-        }
-        return redirect('/tasks/create');
+        request()->validate([
+            'description' => 'required | max:255',
+        ]);
+        Task::create([
+            'description' => request('description'),
+        ]);
+        return redirect('/');
 
     }
 

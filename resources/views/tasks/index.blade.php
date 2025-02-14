@@ -7,6 +7,16 @@
             {{ session('status') }}
         </div>
         @endif
+        @if ($errors->any()){
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        }
+        @endif
         @foreach ($tasks as $task)
             <div class="card" style=" margin-bottom: 20px; @if ($task->isCompleted()) border:2px solid green; @endif">
                 <div class="card-body">
