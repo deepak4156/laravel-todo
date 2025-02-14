@@ -31,7 +31,7 @@ class TaskController extends Controller
         Task::create([
             'description' => request('description'),
         ]);
-        return redirect('/');
+        return redirect('/tasks.index');
 
     }
 
